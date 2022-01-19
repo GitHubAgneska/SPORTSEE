@@ -12,5 +12,17 @@ app.use(cors())
 app.use(router)
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 // app.use(express.static('client/public/')) // DEV
+// app.use(express.static(__dirname + '/public'));
+
 app.use(express.static('client/build')) // PROD
+
+
+// Resolve any address with built index.html (where spa root lives)
+// DEV:
+// router.get("/*", (_, res) => { res.sendFile(path.join(__dirname, "client/public/index.html")) })
+
+// PROD:
+router.get('/*', (_, res) => { res.sendFile(path.join(__dirname, 'client/build/index.html'))})
+
+
 app.listen(PORT, () => { console.log(`Server listening on ${PORT}`)})
