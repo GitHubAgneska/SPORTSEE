@@ -1,5 +1,9 @@
 # SportSee: React dashboard analytics with ExpressJs micro API
 
+<p align="center">
+    <img src="./client/src/assets/imgs/sportSee.png" width="800" alt="app screenshot">
+</p>
+
 #### Class-based React architecture
 #### STACK
 - HTML5/CSS3/Javascript

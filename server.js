@@ -18,7 +18,7 @@ app.use(router)
 
 //app.use(express.static('client/build/')) 
 // Serve the static files from the React app
-app.use(express.static(path.join(__dirname, 'client/build'))); // PROD
+app.use(express.static(path.join(__dirname, './client/build'))); // PROD
 
 
 app.listen(PORT, () => { console.log(`Server listening on ${PORT}`)})
