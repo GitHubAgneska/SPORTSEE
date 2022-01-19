@@ -46,9 +46,9 @@ router.get('/api/user/:id/performance', (req, res) => {
 
 // Resolve any address with built index.html (where spa root lives)
 // DEV
-//router.get("/*", (_, res) => { res.sendFile(path.join(__dirname, "./client/public/index.html")) })
+// router.get("/*", (_, res) => { res.sendFile(path.join(__dirname, "client/public/index.html")) })
 
 // PROD
-router.get('/*', (_, res) => { res.sendFile(path.join(__dirname, './client/build/index.html'))})
+router.get('/*', (_, res) => { res.sendFile(path.join(__dirname, 'client/build/index.html'))})
 
 module.exports = router
