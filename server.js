@@ -16,9 +16,10 @@ app.use(router)
 //app.use(express.static('client/public/')) // DEV
 // app.use(express.static(__dirname + '/public'));
 
-//app.use(express.static('client/build/')) // PROD
+//app.use(express.static('client/build/')) 
 // Serve the static files from the React app
-app.use(express.static(path.join(__dirname, 'client/build')));
+//app.use(express.static(path.join(__dirname, 'client/build'))); // PROD
+app.use(express.static(path.join(__dirname, 'build')));
 
 // Resolve any address with built index.html (where spa root lives)
 // DEV:
@@ -27,8 +28,11 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 // PROD:
 //app.get('/*', (_, res) => { res.sendFile(path.join(__dirname, 'client/build/index.html'))})
 // Handles any requests that don't match the ones above
-app.get('*', (req,res) =>{
+/* app.get('*', (req,res) =>{
     res.sendFile(path.join(__dirname+'/client/build/index.html'));
+}); */
+app.get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 app.listen(PORT, () => { console.log(`Server listening on ${PORT}`)})
