@@ -13,6 +13,13 @@ const {
 const { handleNoUserData } = require('./middleware')
 
 
+router.get('/api/home', (req, res) => {
+    const userId = 12
+    const userData = getUserById(Number(userId))
+
+    return handleNoUserData(res, userData)
+})
+
 router.get('/api/user/:id', (req, res) => {
     const userId = idx(req, _ => _.params.id)
     const userData = getUserById(Number(userId))
@@ -45,10 +52,17 @@ router.get('/api/user/:id/performance', (req, res) => {
 })
 
 // Resolve any address with built index.html (where spa root lives)
-// DEV
+// DEV:
 // router.get("/*", (_, res) => { res.sendFile(path.join(__dirname, "client/public/index.html")) })
 
-// PROD
-// router.get('/*', (_, res) => { res.sendFile(path.join(__dirname, 'client/build/index.html'))})
+// PROD:
+//app.get('/*', (_, res) => { res.sendFile(path.join(__dirname, 'client/build/index.html'))})
+// Handles any requests that don't match the ones above
+/* app.get('*', (req,res) =>{
+    res.sendFile(path.join(__dirname+'/client/build/index.html'));
+}); */
+router.get('/*', (_, res) => {
+    res.sendFile(path.join(__dirname, '/client/build', 'index.html'));
+});
 
 module.exports = router

@@ -16,7 +16,8 @@ const App = () => {
               <Header /> {/* INSIDE router because contains NAV with 'LINK TO'  */}
               <NavSide /> {/* same  */}
               <Switch>
-                  <Route exact path="/" render={() => <Redirect to="/userProfile/12" />} />
+                  {/* <Route exact path="/" render={() => <Redirect to="/userProfile/12" />} /> */}
+                  <Route exact path="/" component={UserProfile} />
                   <Route exact path="/userProfile/:id" component={UserProfile} />
               </Switch>
             </BrowserRouter>

@@ -17,7 +17,7 @@ const UserDataService = {
                 let currentId = null;
                 let idInUrl = parseInt(location.pathname.split('/userProfile/')[1]); 
                 // console.log('ID URL===', parseInt(idInUrl))
-                idInUrl !== defaultId ? currentId = idInUrl : currentId = defaultId;
+                !idInUrl || idInUrl !== defaultId ? currentId = idInUrl : currentId = defaultId;
                 return currentId;
         },
 
