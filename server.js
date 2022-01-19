@@ -11,10 +11,11 @@ app.use(express.json())
 app.use(cors())
 app.use(router)
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
+app.use(favicon(__dirname + 'client/public/favicon.ico'));
 //app.use(express.static('client/public/')) // DEV
 // app.use(express.static(__dirname + '/public'));
 
-app.use(express.static('client/build')) // PROD
+app.use(express.static('client/build/')) // PROD
 
 
 // Resolve any address with built index.html (where spa root lives)
