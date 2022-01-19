@@ -61,8 +61,8 @@ router.get('/api/user/:id/performance', (req, res) => {
 /* app.get('*', (req,res) =>{
     res.sendFile(path.join(__dirname+'/client/build/index.html'));
 }); */
-router.get('/*', (_, res) => {
+/* router.get('/*', (_, res) => {
     res.sendFile(path.join(__dirname, '/client/build', 'index.html'));
-});
+}); */
 
 module.exports = router
