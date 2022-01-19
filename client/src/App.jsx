@@ -17,9 +17,9 @@ const App = () => {
               <NavSide /> {/* same  */}
               <Switch>
                   
-                  {/* <Route exact path="/" render={() => <Redirect to="/userProfile/12" />} /> */}
-                  <Route exact path="/" render={() => <Redirect to="/home" />} />
-                  <Route exact path="/home" component={UserProfile} />
+                  {/*  <Route exact path="/" render={() => <Redirect to="/home" />} />
+                  <Route exact path="/home" component={UserProfile} /> */}
+                  <Route exact path="/" render={() => <Redirect to="/userProfile/12" />} />
                   <Route exact path="/userProfile/:id" component={UserProfile} />
                   <Route component={UserProfile} />
               </Switch>

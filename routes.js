@@ -13,13 +13,6 @@ const {
 const { handleNoUserData } = require('./middleware')
 
 
-router.get('/api/home', (req, res) => {
-    const userId = 12
-    const userData = getUserById(Number(userId))
-
-    return handleNoUserData(res, userData)
-})
-
 router.get('/api/user/:id', (req, res) => {
     const userId = idx(req, _ => _.params.id)
     const userData = getUserById(Number(userId))
