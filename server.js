@@ -16,15 +16,15 @@ app.use(router)
 //app.use(express.static('client/public/')) // DEV
 // app.use(express.static(__dirname + '/public'));
 
-app.use(express.static('__dirname')) // PROD
-
+//app.use(express.static('client/build/')) // PROD
+app.use('/', express.static(__dirname + '/'));
 
 // Resolve any address with built index.html (where spa root lives)
 // DEV:
 // router.get("/*", (_, res) => { res.sendFile(path.join(__dirname, "client/public/index.html")) })
 
 // PROD:
-app.get('/*', (_, res) => { res.sendFile(path.join(__dirname, 'client/build/index.html'))})
+//app.get('/*', (_, res) => { res.sendFile(path.join(__dirname, 'client/build/index.html'))})
 
 
 app.listen(PORT, () => { console.log(`Server listening on ${PORT}`)})
