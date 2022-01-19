@@ -1,5 +1,6 @@
 # SportSee: React dashboard analytics with ExpressJs micro API
 
+#### Class-based React architecture
 #### STACK
 - HTML5/CSS3/Javascript
 - React
