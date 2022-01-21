@@ -28,7 +28,7 @@ const FetchDataService = {
         ];
         // MAKE AN ARRAY OF PROMISES TO RETRIEVE DATA FROM ALL ENDPOINTS AT ONCE
         let requests = endpoints.map( endpoint => fetch(endpoint.url) );
-
+        // console.log('REQUESTS=>', requests)
         return (
             // Promise.all() takes the array of promises
             Promise.all(requests)
