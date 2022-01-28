@@ -32,3 +32,32 @@
 - The `npm i` command will allow you to install the dependencies.
 - The `npm run start` command will allow you to run the micro API.
 ----
+
+``` bash
+SPORTSEE DATA FLOW
+
+┌─────────────┐     ┌─────────────────┐
+│ LOCAL DATA  ├────►│SERVED by Express│
+└─────────────┘     │on 5000          │
+                    └─────────┬───────┘
+                              │
+      ┌───────────────────────▼────────────────────────┐
+      │API routes  : 5000/api/user/:id                 │
+      │              5000/api/user/:id/activity        │
+      │              5000/api/user/:id/average-session │
+      │              5000/api/user/:id/performance     │
+      └───────────────────────┬────────────────────────┘
+                              │
+                              │
+                              │
+                  ┌───────────┴───────────┐
+                  │                       │
+                  │  React client fetch   │
+                  │                       │
+                  └───────────────────────┘
+
+```
+
+
+
+
