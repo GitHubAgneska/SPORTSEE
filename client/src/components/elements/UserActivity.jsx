@@ -1,24 +1,34 @@
 import PropTypes from "prop-types"
-import {BarChart, CartesianGrid, ReferenceLine, XAxis, YAxis,Tooltip, Legend, Bar, ResponsiveContainer} from "recharts"
+import { BarChart, CartesianGrid, XAxis, YAxis,Tooltip, Bar, ResponsiveContainer } from "recharts"
 import styled from "styled-components"
 
 const Wrapper = styled.div`
-    padding:5%;
     width: 100%;
-    @media screen and (max-width: 600px) { height: 40vh;}
-    @media screen and (min-width: 600px) { height:100%;}
-
+    @media screen and (max-width: 600px) {min-height: 70vh;}
+    @media screen and (min-width: 600px) { height:100%; padding:5%;}
 `;
 
 const Title = styled.div`
+    border:1px solid blue;
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    h2 {
-        font-size: 1rem;
-        font-weight: 500;
-        color: grey;
+    @media screen and (max-width: 600px) {
+        flex-direction: column;
+        h2 {  
+            width: 100%;
+            font-size: 0.8rem;
+        }
     }
+    @media screen and (min-width: 600px) {
+        flex-direction: row;
+        justify-content: space-between;
+        h2 {
+            font-size: 1rem;
+            font-weight: 500;
+            color: grey;
+        }
+    }
+    
 `;
 
 const StyledLegend = styled.div`
@@ -30,18 +40,20 @@ const Unit = styled.div`
     display: flex;
     align-items: center;
     p {
-        margin-left: 1rem;
-        font-size: 1rem;
         color: grey;
+        @media screen and (max-width: 600px) {font-size: 0.6rem;}
+        @media screen and (min-width: 600px) {font-size: 1rem;}
+        margin-left: 1rem;
+        
     }
 `
-
 const Color = styled.div`
     background-color: ${(props) => props.color};
     height: .8rem;
     width: .8rem;
     border-radius: 10rem;
 `
+
 const CustomTooltipClass = {
     width:"50px",
     height:"70px",
@@ -62,24 +74,24 @@ const CustomTooltip = ({ active, payload }) => {
     return null;
 };
 
-const CustomizedCursor = ({active}) => {
+/* const CustomizedCursor = ({active}) => {
     if (active) {
         return ( <div style={{width:"50px",height:"100px", stroke:'grey', backgroundColor:"grey"}}></div> );
     }
     return null;
-}
+} */
 
-const renderLegend = () => {
+/* const renderLegend = () => {
         return (
             <ul style={{width: '100%',display: 'flex', flexFlow:'row nowrap', justifyContent:'flex-end', listStyle:'circle'}}>
                 <li>Poids</li>
                 <li style={{margin:'0 5%' , listStyle:'circle'}}>Calories brûlées</li>
             </ul>
     );
-}
+} */
 
 let getDay = (x) => { return (x.day.substr(x.day.length-1) > 0? x.day.substring(x.day.length-1):x.day.substring(x.day.length-2)); }
-let getAverageWeight = (x) => { let overAll = 0; let days = 0;  x.forEach(w => { overAll+=w; days+=1;return overAll/days; }) }
+// let getAverageWeight = (x) => { let overAll = 0; let days = 0;  x.forEach(w => { overAll+=w; days+=1;return overAll/days; }) }
 
 const UserActivity = ({userActivitySessions}) => {
         
@@ -100,46 +112,50 @@ const UserActivity = ({userActivitySessions}) => {
                 </Title>
                 
                 <ResponsiveContainer>
-                <BarChart barSize={8} data={userActivitySessions} >
+                    <BarChart barSize={8} data={userActivitySessions} >
 
-                    <CartesianGrid
-                        vertical={false}
-                        strokeDasharray="4 2"
-                    />
-                    <XAxis 
-                        dataKey={getDay}
-                        tickLine={false}
-                        dy = {10} 
-                    />
-                    
-                    <YAxis 
-                        dataKey="kilogram"  
-                        domain={['dataMin-1', 'dataMax+1']}
-                        orientation="right" 
-                        tickLine={false}
-                        tickCount="5"
-                        allowDecimals={false}  
-                        dx={20}
-                    />
-                    <YAxis
-                        yAxisId = "calories"
-                        dataKey = "calories"
-                        allowDecimals={false}  
-                        hide = {true}
-                        /* hide = {false} */
-                        tickLine={false}
-                        domain = {[0, 'dataMax-25']}
-                    />
+                        <CartesianGrid
+                            vertical={false}
+                            strokeDasharray="4 2"
+                        />
 
-                    {/* <ReferenceLine y="70" stroke="grey" strokeDasharray="3 3" /> */}
-                    {/* <Legend content={renderLegend} verticalAlign="top" height={40} align="right" iconType="circle" iconSize="10"/> */}
-                    {/*  <Legend verticalAlign="top" height={40} align="right" iconType="circle" iconSize="10" /> */}
-                    <Bar dataKey="kilogram" fill="black" radius={[50, 50, 0, 0]} />
-                    <Bar dataKey="calories"  yAxisId="calories" fill="red" radius={[50, 50, 0, 0]}  />
-                    {/* <Tooltip content={<CustomTooltip />} cursor={<CustomizedCursor />}/> */}
-                    <Tooltip content={<CustomTooltip />} cursor={{ opacity:'0.5', zIndex:'-9' }} />
-                </BarChart>
-            </ResponsiveContainer>
+                        <XAxis 
+                            dataKey={getDay}
+                            tickLine={false}
+                            dy = {10} 
+                        />
+                        
+                        <YAxis 
+                            dataKey="kilogram"  
+                            domain={['dataMin-1', 'dataMax+1']}
+                            orientation="right" 
+                            tickLine={false}
+                            tickCount="5"
+                            allowDecimals={false}  
+                            dx={20}
+                        />
+
+                        <YAxis
+                            yAxisId = "calories"
+                            dataKey = "calories"
+                            allowDecimals={false}  
+                            hide = {true}
+                            /* hide = {false} */
+                            tickLine={false}
+                            domain = {[0, 'dataMax-25']}
+                        />
+
+                        {/* <ReferenceLine y="70" stroke="grey" strokeDasharray="3 3" /> */}
+                        {/* <Legend content={renderLegend} verticalAlign="top" height={40} align="right" iconType="circle" iconSize="10"/> */}
+                        {/*  <Legend verticalAlign="top" height={40} align="right" iconType="circle" iconSize="10" /> */}
+                        <Bar dataKey="kilogram" fill="black" radius={[50, 50, 0, 0]} />
+                        <Bar dataKey="calories"  yAxisId="calories" fill="red" radius={[50, 50, 0, 0]}  />
+                        {/* <Tooltip content={<CustomTooltip />} cursor={<CustomizedCursor />}/> */}
+                        <Tooltip content={<CustomTooltip />} cursor={{ opacity:'0.5', zIndex:'-9' }} />
+
+                    </BarChart>
+                </ResponsiveContainer>
+
         </Wrapper>
     )
 } 

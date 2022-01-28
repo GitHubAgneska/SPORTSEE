@@ -63,18 +63,19 @@ background-color:#FBFBFB;
 `;
 
 // graphs : 3 containers
-export const SectionD = styled.section`
-border: 5px solid green;
-display:flex;
-@media screen and (max-width: 600px) {
-    width:100%; flex-flow:column nowrap;
-    section { width:100%;}
-}
-@media screen and (min-width: 600px) {
-    height:260px;
-    width: 75%; /* width: 57.986vw; // 835px */
-    flex-flow:row nowrap;
-    justify-content: space-between;
-    margin-bottom:25px;
+export const SectionD = styled.div`
+    border: 5px solid green;
+    display:flex;
+    @media screen and (max-width: 600px) {
+        height: 80vh;
+        width:100%; flex-flow: column nowrap;
+        section { width:100%; }
+    }   
+    @media screen and (min-width: 600px) {
+        height:260px;
+        width: 75%;
+        flex-flow:row nowrap;
+        justify-content: space-between;
+        margin-bottom:25px;
 }
 `;

@@ -4,15 +4,12 @@ import { PieChart, Pie, Legend, Cell, ResponsiveContainer } from 'recharts';
 import styled from "styled-components"
 
 const Wrapper = styled.section `
-    /* border: 2px solid grey; */
-    /*   flex-basis:30%;
-    max-height:100%; */
-
     background-color: #FBFBFB;
     padding:5%;
     height:100%;
     width: 100%;
-    max-width: 30%;
+    @media screen and (max-width: 600px) {width:100%;}
+    @media screen and (min-width: 600px) {max-width: 30%;}
 `;
 
 const UserScore = ({userScore}) => {

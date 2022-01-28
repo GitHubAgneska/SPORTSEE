@@ -6,20 +6,20 @@ import icon_carbs from '../../assets/icons/icon_carbs.png';
 import icon_fat from '../../assets/icons/icon_fat.png';
 
 const KeyitemWrapper = styled.div `
-    
-
-    @media screen and (max-width: 600px) {height:auto;}
+    @media screen and (max-width: 600px) {height:auto; padding-bottom:2%;}
     @media screen and (min-width: 600px) {height:125px;}
+    
     display: flex;
     justify-content:center;
     align-items:center;
     background-color: #FBFBFB;
 `;
 const Keyitem = styled.div `
-    /* border: 1px solid pink; */
-/*     @media screen and (max-width: 600px) {height:auto;}
-    @media screen and (min-width: 600px) {height:125px;} */
-    width:195px;
+/* border: 1px solid pink; */
+
+    @media screen and (max-width: 600px) { width:100%;}
+    @media screen and (min-width: 600px) { width:195px;}
+    
     height:60px;
     
     display: flex;
@@ -37,7 +37,6 @@ const KeyItemText = styled.div`
         h1 { margin:0; font-weight:700; font-size:22px; }
         h2 { margin:5% 0%; font-size:14px; color:grey; }
     }
-
 `;
 
 const KeyItemIcon = styled.img `

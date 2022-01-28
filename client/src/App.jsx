@@ -5,6 +5,7 @@ import NotFoundPage from './components/containers/404'
 import NavSide from './components/layout/Nav_side';
 import Header from './components/layout/Header';
 import { GlobalStyle } from './style/global_style';
+import Footer from './components/layout/Footer'
 
 const App = () => {
 
@@ -22,6 +23,7 @@ const App = () => {
                   <Route component={NotFoundPage} />
               </Switch>
             </BrowserRouter>
+            <Footer />
         </div>
     </div>
   );
