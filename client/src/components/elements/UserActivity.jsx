@@ -2,10 +2,12 @@ import PropTypes from "prop-types"
 import {BarChart, CartesianGrid, ReferenceLine, XAxis, YAxis,Tooltip, Legend, Bar, ResponsiveContainer} from "recharts"
 import styled from "styled-components"
 
-const Wrapper = styled.section`
+const Wrapper = styled.div`
     padding:5%;
-    height:100%;
     width: 100%;
+    @media screen and (max-width: 600px) { height: 40vh;}
+    @media screen and (min-width: 600px) { height:100%;}
+
 `;
 
 const Title = styled.div`
@@ -83,7 +85,6 @@ const UserActivity = ({userActivitySessions}) => {
         
     return (
         <Wrapper>
-
                 <Title>
                     <h2>Activité quotidienne</h2>
                     <StyledLegend>

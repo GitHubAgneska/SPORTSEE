@@ -7,7 +7,9 @@ const StyledNavWrapper = styled.div `
     box-shadow: 0px 0px 10px #0000008f;
 `;
 const StyledNav = styled.nav ` 
-    display: flex; flex-flow: row nowrap;
+    display: flex; 
+    @media screen and (min-width: 600px) {flex-flow: row nowrap;  justify-content:end; }
+    @media screen and (max-width: 600px) {display:none}
     justify-content: space-between;
 
 `;
@@ -25,10 +27,10 @@ const NavMain = () => {
     return (
         <StyledNavWrapper>
             <StyledNav>
-                <StyledLink to="/userProfile/18">Accueil</StyledLink>
-                <StyledLink to="/userProfile/18">Profil</StyledLink>
-                <StyledLink to="/userProfile/18">Réglages</StyledLink>
-                <StyledLink to="/userProfile/18">Communauté</StyledLink>
+               {/*  <StyledLink to="/">Accueil</StyledLink> */}
+                {/* <StyledLink to="/">Profil</StyledLink> */}
+                {/* <StyledLink to="/">Réglages</StyledLink>
+                <StyledLink to="/">Communauté</StyledLink> */}
             </StyledNav>
         </StyledNavWrapper>
     )

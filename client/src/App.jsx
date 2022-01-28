@@ -11,11 +11,11 @@ const App = () => {
   return (
 
     <div className='App'>
-        <div className="container" style={{height:'100%', width:'100%', position:'fixed'}}>
+        <div className="container" style={{height:'100%', width:'100%'}}>
           <GlobalStyle />
             <BrowserRouter>
               <Header /> {/* INSIDE router because contains NAV with 'LINK TO'  */}
-              <NavSide /> {/* same  */}
+             {/*  <NavSide /> */} {/* same  */}
               <Switch>
                   <Route exact path="/" render={() => <Redirect to="/userProfile/12" />} />
                   <Route exact path="/userProfile/:id" component={UserProfile} />

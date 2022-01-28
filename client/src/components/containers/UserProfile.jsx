@@ -82,7 +82,6 @@ export default class UserProfile extends React.Component {
                 } = this.state;
                 
                 return (
-                    <main>
                         <MainWrapper>
 
                             <SectionA>
@@ -104,8 +103,6 @@ export default class UserProfile extends React.Component {
                             </SectionD>
 
                         </MainWrapper>
-                    </main>
-
                 )
             }
 }

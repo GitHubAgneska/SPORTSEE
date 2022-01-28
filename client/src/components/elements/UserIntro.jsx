@@ -2,17 +2,28 @@ import PropTypes from "prop-types"
 import { Fragment } from "react";
 import styled from "styled-components"
 
-const StyledH1 = styled.h1 `
-    font-size: 3.333vw ;    // 48px; // 3em - in viewport 1440
+const StyledH1 = styled.h1`
+
+    @media screen and (max-width: 600px) { font-size:6vw;}
+    @media screen and (min-width: 600px) {
+        font-size: 3.333vw; // 48px = 3em - in viewport 1440
+    }
+
     font-weight:500;
     margin-left: 0;
     margin-top: 0;
     margin-bottom:1.389vw;  // 20px;  - in viewport 1440
+
+
+
 `;
 const StyledSpan = styled.span`color:red;`;
 
 const Styledp = styled.p`
-    font-size: 1.250vw; // 18px || 1.125em - in viewport 1440
+    @media screen and (max-width: 600px) {font-size: 3vw;margin: 0;}  
+    @media screen and (min-width: 600px) {font-size: 1.250vw; // 18px || 1.125em - in viewport 1440}
+    
+    
 `;
 
 const UserIntro = ({userFirstName,introSentence}) => {

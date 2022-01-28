@@ -6,7 +6,10 @@ import icon_carbs from '../../assets/icons/icon_carbs.png';
 import icon_fat from '../../assets/icons/icon_fat.png';
 
 const KeyitemWrapper = styled.div `
-    height:125px;
+    
+
+    @media screen and (max-width: 600px) {height:auto;}
+    @media screen and (min-width: 600px) {height:125px;}
     display: flex;
     justify-content:center;
     align-items:center;
@@ -14,13 +17,27 @@ const KeyitemWrapper = styled.div `
 `;
 const Keyitem = styled.div `
     /* border: 1px solid pink; */
-    height:60px; width:195px;
+/*     @media screen and (max-width: 600px) {height:auto;}
+    @media screen and (min-width: 600px) {height:125px;} */
+    width:195px;
+    height:60px;
+    
     display: flex;
     flex-direction: row nowrap;
     align-items: center; 
 `;
 const KeyItemText = styled.div`
     margin-left:3%;
+
+    @media screen and (max-width: 600px) {
+        h1 { margin:0; font-weight:700; font-size:15px; }
+        h2 { margin:5% 0%; font-size:10px; color:grey; }
+    }
+    @media screen and (min-width: 600px) {
+        h1 { margin:0; font-weight:700; font-size:22px; }
+        h2 { margin:5% 0%; font-size:14px; color:grey; }
+    }
+
 `;
 
 const KeyItemIcon = styled.img `
@@ -49,8 +66,8 @@ const UserKeyDataItem = (props) => {
                 }
 
                 <KeyItemText>
-                    <h1 style={{margin:0, fontWeight:"700", fontSize:"22px"}}>{props.data.keyDataValue}{props.data.keyDataUnit}</h1>
-                    <h2 style={{margin:"5% 0%", fontSize:"14px", color:"grey" }}>{props.data.keyDataType}</h2>
+                    <h1>{props.data.keyDataValue}{props.data.keyDataUnit}</h1>
+                    <h2>{props.data.keyDataType}</h2>
                 </KeyItemText>
             </Keyitem>
         </KeyitemWrapper>

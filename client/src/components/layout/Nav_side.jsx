@@ -7,11 +7,14 @@ import icon_weight from '../../assets/icons/icon_weight.png'
 import styled from "styled-components"
 
 const StyledNavWrapper = styled.div `
+    display: none;
+
     width: 8%; // 120px in 1440
     height:100vh;
     background-color:black; 
     display: flex; flex-flow: column nowrap; align-items: center;
     justify-content: space-between;
+    @media screen and (max-width: 600px) {display: none;}
 `;
 
 const StyledNavSide = styled.nav `
