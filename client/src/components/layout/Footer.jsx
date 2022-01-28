@@ -4,7 +4,6 @@ const StyledFooter = styled.footer`
     height: 20px;
     background-color:black;
     padding-top: 5%;
-
 `
 
 const Footer = () => { 

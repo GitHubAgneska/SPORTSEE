@@ -12,7 +12,7 @@ const KeyitemWrapper = styled.div `
     display: flex;
     justify-content:center;
     align-items:center;
-    background-color: #FBFBFB;
+    background-color: #EFECEC;  
 `;
 const Keyitem = styled.div `
 /* border: 1px solid pink; */

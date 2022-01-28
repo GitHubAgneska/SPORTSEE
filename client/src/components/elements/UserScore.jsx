@@ -4,7 +4,7 @@ import { PieChart, Pie, Legend, Cell, ResponsiveContainer } from 'recharts';
 import styled from "styled-components"
 
 const Wrapper = styled.section `
-    background-color: #FBFBFB;
+    background-color: #EFECEC;
     padding:5%;
     height:100%;
     width: 100%;

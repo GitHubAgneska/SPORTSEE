@@ -1,41 +1,23 @@
 import styled from "styled-components"
 
 export const MainWrapper = styled.main`
-        border:4px solid yellow;
-        width: 90%;
-        margin: auto;
-        padding-top: 3%;
-
-
-
-       /*  height: 93vh; */
-
-        @media screen and (min-width: 600px) {
-           /*  position: absolute; */
-            /* height: 90%;
-                width: 92%;
-                margin: 1%; */
-           /*  top: 90px;
-              left: 120px; */
-        }
-        @media screen and (max-width: 600px) {
-           /*  position: relative; */
-           /*  width:100%; */
-        }
+    /* border:4px solid yellow; */
+    width: 90%;
+    margin: auto;
+    padding-top: 3%;
 `;
 
 // user intro
 export const SectionA = styled.section`
-    border: 2px solid grey;
+    /* border: 2px solid grey; */
     margin-bottom:25px;
     @media screen and (max-width: 600px) {width:100%;}
-    @media screen and (min-width: 600px) { }
 `;
 
 // user keydata
 export const SectionB = styled.section`
-border: 2px solid yellow;
-    @media screen and (max-width: 600px) {width:100%;}
+/* border: 2px solid yellow; */
+    @media screen and (max-width: 600px) {width:100%; padding-bottom: 5%}
 
     @media screen and (min-width: 600px) {
         width:20%;
@@ -47,14 +29,13 @@ border: 2px solid yellow;
             clear: both;
         }
     }
-
 `;
 
 // graph activity
 export const SectionC = styled.section`
-border: 2px solid pink;
-background-color:#FBFBFB;
-    @media screen and (max-width: 600px) {width:100%;}
+/* border: 2px solid pink; */
+background-color:#EFECEC;
+    @media screen and (max-width: 600px) {width:100%; padding-bottom: 5%}
     @media screen and (min-width: 600px) {
         height:325px;
         width: 75%; /* width: 57.986vw; 835px  */
@@ -64,12 +45,12 @@ background-color:#FBFBFB;
 
 // graphs : 3 containers
 export const SectionD = styled.div`
-    border: 5px solid green;
+/*  border: 5px solid green; */
     display:flex;
     @media screen and (max-width: 600px) {
-        height: 80vh;
         width:100%; flex-flow: column nowrap;
         section { width:100%; }
+        padding-bottom: 5%;
     }   
     @media screen and (min-width: 600px) {
         height:260px;
@@ -77,5 +58,4 @@ export const SectionD = styled.div`
         flex-flow:row nowrap;
         justify-content: space-between;
         margin-bottom:25px;
-}
-`;
+}`;
