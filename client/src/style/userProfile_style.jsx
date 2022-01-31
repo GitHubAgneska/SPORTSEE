@@ -37,7 +37,7 @@ export const SectionC = styled.section`
 background-color:#EFECEC;
     @media screen and (max-width: 600px) { width:100%; margin-bottom: 5%; }
     @media screen and (min-width: 600px) {
-        height:325px;
+       /*  height:325px; */
         width: 75%;
         margin-bottom:25px;
     }
