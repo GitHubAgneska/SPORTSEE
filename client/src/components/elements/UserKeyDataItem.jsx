@@ -6,7 +6,7 @@ import icon_carbs from '../../assets/icons/icon_carbs.png';
 import icon_fat from '../../assets/icons/icon_fat.png';
 
 const KeyitemWrapper = styled.div `
-    @media screen and (max-width: 600px) {height:auto; padding-bottom:2%;}
+    @media screen and (max-width: 600px) {height:auto; padding:2%; margin: 2% 0; }
     @media screen and (min-width: 600px) {height:125px;}
     
     display: flex;

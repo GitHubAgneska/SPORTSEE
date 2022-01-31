@@ -6,8 +6,9 @@ import styled from 'styled-components'
 
 const StyledHeader = styled.header `
     width: 100%;
-    @media screen and (max-width: 600px) {height: 7vh;}
-    @media screen and (min-width: 600px) {height: 9vh;}
+    height: 9vh;
+    @media screen and (max-width: 600px) {padding-top: 2%;}
+    @media screen and (min-width: 600px) {}
     transition: height 0.3s linear;
 
     display: flex; flex-flow: row nowrap;

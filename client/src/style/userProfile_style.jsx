@@ -35,7 +35,7 @@ export const SectionB = styled.section`
 export const SectionC = styled.section`
 /* border: 2px solid pink; */
 background-color:#EFECEC;
-    @media screen and (max-width: 600px) { width:100%; padding-bottom: 5%}
+    @media screen and (max-width: 600px) { width:100%; margin-bottom: 5%; }
     @media screen and (min-width: 600px) {
         height:325px;
         width: 75%;
