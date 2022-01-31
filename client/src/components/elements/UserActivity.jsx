@@ -4,9 +4,7 @@ import styled from "styled-components"
 
 const Wrapper = styled.div`
     width: 100%;
-    /* @media screen and (max-width: 600px) {min-height: 70vh;} */
     @media screen and (min-width: 600px) { height:100%; padding:5%;}
-    .recharts-responsive-container { border:1px solid grey; flex: auto;}
 `;
 
 const Title = styled.div`
@@ -112,7 +110,7 @@ const UserActivity = ({userActivitySessions}) => {
                     </StyledLegend>
                 </Title>
                 
-                <ResponsiveContainer>
+                <ResponsiveContainer  width="99%" aspect={3}>
                     <BarChart barSize={8} data={userActivitySessions} >
 
                         <CartesianGrid

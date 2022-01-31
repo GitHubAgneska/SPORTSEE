@@ -18,6 +18,7 @@ const FetchDataService = {
     fetchData : function() {
 
         let userId = UserDataService.retrieveIdFromUrl();
+        if ( !userId) { userId = 18 }
         localUser.id = userId;
 
         const endpoints = [

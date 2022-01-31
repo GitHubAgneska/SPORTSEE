@@ -44,7 +44,7 @@ const UserScore = ({userScore}) => {
 
     return (
         <Wrapper>
-            <ResponsiveContainer>
+            <ResponsiveContainer width="99%" aspect={1}>
                     <PieChart width={800} height={400}>
                         <Pie 
                             dataKey="value"

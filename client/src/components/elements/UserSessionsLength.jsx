@@ -40,7 +40,7 @@ const renderLegend = () => {
 const UserSessionsLength = ({userLengthSessions}) => {
     return (
         <Wrapper>
-            <ResponsiveContainer>
+            <ResponsiveContainer width="99%" aspect={1}>
                 <LineChart 
                     data={userLengthSessions} 
                     width={400} 

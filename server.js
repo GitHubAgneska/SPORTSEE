@@ -1,10 +1,11 @@
 const express = require('express')
 require('dotenv').config()
 const PORT = process.env.PORT || 5000
-const app = express()
 const cors = require('cors')
 const path = require('path')
 const favicon = require('serve-favicon')
+
+const app = express()
 
 app.use(express.json())
 app.use(cors())
@@ -14,7 +15,6 @@ const userRoutes =require('./routes');
 // Use Routes
 app.use('/api/user', userRoutes)
 
-//app.use(express.static('client/public/')) // DEV
 
 // Serve the static if in production
 if ( process.env.NODE_ENV === 'production') {

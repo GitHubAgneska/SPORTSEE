@@ -15,7 +15,7 @@ const UserPerformances = ({userPerformances}) => {
     return (
 
         <Wrapper>
-            <ResponsiveContainer width="100%" height="100%">
+            <ResponsiveContainer width="99%" aspect={1} height="100%">
                     <RadarChart  
                         data={userPerformances}
                         outerRadius={78} 
