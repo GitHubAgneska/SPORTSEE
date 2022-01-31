@@ -5,6 +5,7 @@ import styled from "styled-components"
 const Wrapper = styled.section`    
     background-color: red;
     padding: 10px 0px;
+    margin: 10px 0px;
     height:100%;
     width: 100%;
     

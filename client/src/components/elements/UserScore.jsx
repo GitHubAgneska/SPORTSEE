@@ -8,6 +8,7 @@ const Wrapper = styled.section `
     padding:5%;
     height:100%;
     width: 100%;
+    margin: 10px 0px;
     @media screen and (max-width: 600px) {width:100%;}
     @media screen and (min-width: 600px) {max-width: 30%;}
 `;
